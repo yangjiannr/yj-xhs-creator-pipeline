@@ -1,0 +1,5 @@
+.last_root
+__pycache__/
+*.pyc
+.venv/
+funasr_venv/

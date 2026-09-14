@@ -1,0 +1,29 @@
+{
+  "skill_name": "yj-xhs-creator-pipeline",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "帮我抓这个小红书博主的全部视频并转写：https://www.xiaohongshu.com/user/profile/6800e3fb000000000e01f694?xsec_token=ABVcKjpWEnO02vB-y-mevAZ5rUd25YmDn7sqSt4VpaOS8%3D&xsec_source=pc_search ，博主名大王育儿真心话。先确认计划，别立刻全量下。",
+      "expected_output": "Asks about last root (e.g. F:/downloads), confirms folder name, outlines MediaCrawler xhs → init_queue_xhs → download_xhs (parse+unescape CDN) → asr_ordered; notes xsec_token requirement and empty video_url pitfall; offers smoke 3 + ASR preview; does not start bulk download yet.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "试下 3 条小红书下载，上次直链全 403。",
+      "expected_output": "Uses download_xhs.py with note-page parse and html.unescape for masterUrl; does not rely on empty MediaCrawler video_url or broken Rednote &amp; downloads; reports ok/fail and file sizes under videos/.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "开始全量：下载和转写一起跑。",
+      "expected_output": "Starts download_xhs.py and asr_ordered.py in parallel with separate locks; ASR waits until >5 downloads; explains how to monitor logs.",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "ASR 中途因为文件名有 emoji 崩了，还剩几条未转写，怎么收尾？",
+      "expected_output": "Clears stale asr.lock if PID dead; re-runs asr_ordered with --min-downloaded 0 --pause-remaining 0; mentions ascii-safe print fix; does not re-download existing mp4s.",
+      "files": []
+    }
+  ]
+}

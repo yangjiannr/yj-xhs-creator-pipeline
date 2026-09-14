@@ -1,0 +1,22 @@
+{
+  "platform": "xhs",
+  "root_downloads": "F:/downloads",
+  "mediacrawler_dir": "D:/300GitHub/MediaCrawler",
+  "videodl_exe": "D:/300GitHub/videodl/.venv/Scripts/videodl.exe",
+  "videodl_cwd": "D:/300GitHub/videodl",
+  "asr_python": "",
+  "download_client": "RednoteVideoClient",
+  "sleep_min_sec": 5.0,
+  "sleep_max_sec": 12.0,
+  "asr_engine": "auto",
+  "whisper_model": "medium",
+  "asr_short_first": true,
+  "long_video_bytes": 83886080,
+  "skip_existing_video": true,
+  "skip_existing_transcript": true,
+  "ffmpeg_bin": "D:/300GitHub/ffmpeg/bin",
+  "hf_endpoint": "https://hf-mirror.com",
+  "hf_hub_disable_xet": true,
+  "xhs_creator_url": "",
+  "xhs_creator_name": ""
+}
